@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import type {HoroscopeDataValues, GetFormDataParams} from "../interfaces/interface"
+import type {HoroscopeDataValues, FormDataValues} from "../interfaces/interface"
 
 
 
@@ -14,7 +14,7 @@ export default function useFetchHoroscope() {
   const [loading, setLoading] = useState(false);
   const [isFalls, setIsFalls] = useState(false);
 
-  function getFormData(data: GetFormDataParams) {
+  function getFormData(data: FormDataValues) {
     setFormData(data);
   }
   function fetchData() {

@@ -4,7 +4,7 @@ import GoToHomeBtn from "../components/GoToHomeBtn";
 import CheckDate from "../components/CheckDate";
 
 export default function () {
-  const { formData, loading } = useGlobalContext();
+  const { formData, loading } = useGlobalContext()!;
   return (
     <>
       <div className="text-center w-full mt-5 -mb-2">

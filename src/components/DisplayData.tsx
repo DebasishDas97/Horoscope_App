@@ -1,7 +1,7 @@
 import useGlobalContext from "../Context/context";
 
 export default function DisplayData() {
-  const { horoscopeData, isFalls } = useGlobalContext();
+  const { horoscopeData, isFalls } = useGlobalContext()!;
 
 
   return (

@@ -5,7 +5,7 @@ import SelectDay from "./SelectDay";
 
 export default function Form() {
   const navigate = useNavigate();
-  const { getFormData } = useGlobalContext();
+  const { getFormData } = useGlobalContext()!;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

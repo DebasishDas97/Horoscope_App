@@ -20,17 +20,11 @@ interface HoroscopeDataValues {
     loading: boolean;
     horoscopeData: HoroscopeDataValues;
     formData: FormDataValues;
-    getFormData: (data: GetFormDataParams) => void;
+    getFormData: (data: FormDataValues) => void;
     isFalls: boolean;
     setIsFalls?: (isFalls: boolean) => void;
   }
 
-interface GetFormDataParams {
-    name: string;
-    sign: string;
-    email: string;
-    date: string;
-  }
 
   interface Props {
     children?: ReactNode;
@@ -39,7 +33,6 @@ interface GetFormDataParams {
   export type {
     HoroscopeDataValues,
     Props,
-    GetFormDataParams,
     HoroscopeContextValue,
     FormDataValues,
   }
