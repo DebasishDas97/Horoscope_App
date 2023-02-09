@@ -22,8 +22,9 @@ export default function useFetchHoroscope() {
   function getFormData(data: GetFormDataParams) {
     setFormData(data);
   }
-
   function fetchData() {
+    const API_Key = import.meta.env.VITE_API_KEY;
+    setLoading(true);
     const options = {
       method: "POST",
       url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/",
@@ -32,11 +33,11 @@ export default function useFetchHoroscope() {
         day: formData.date,
       },
       headers: {
-        "X-RapidAPI-Key": "47250aff6amshb141229d7d02716p1bd1acjsn9ffc0033ce19",
+        "X-RapidAPI-Key": API_Key,
         "X-RapidAPI-Host": "sameer-kumar-aztro-v1.p.rapidapi.com",
       },
     };
-    setLoading(true);
+
     axios
       .request(options)
       .then(function (response) {
