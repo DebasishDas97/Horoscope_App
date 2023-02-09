@@ -1,4 +1,3 @@
-
 export const signs = [
     {
         name: "Aries",

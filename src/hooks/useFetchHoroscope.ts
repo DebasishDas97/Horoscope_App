@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { HoroscopeDataValues } from "../Context/context";
+import type {HoroscopeDataValues, GetFormDataParams} from "../interfaces/interface"
 
-interface GetFormDataParams {
-  name: string;
-  sign: string;
-  email: string;
-  date: string;
-}
+
 
 export default function useFetchHoroscope() {
   const [horoscopeData, setHoroscopeData] = useState(
