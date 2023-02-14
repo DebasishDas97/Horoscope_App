@@ -12,23 +12,23 @@ export default function DisplayData() {
         <ul className="md:text-xl text-[1.1rem] font-semibold tracking-wide">
           <li className="flex justify-between my-2 text-red-300">
             <span>
-              Horoscope :{" "}
-              <span className={`text-white font-light ${isFalls ? "bg-white text-black" : "bg-none"}`}>
+              Horoscope :
+              <span className={`font-light ml-1 ${isFalls ? "bg-white text-black" : "bg-none text-white"}`}>
                 {horoscopeData.description}
               </span>
             </span>
           </li>
           <li className="flex justify-between my-2 text-blue-300">
             <span>
-              Lucky Color :{" "}
-              <span className="text-white font-light">
+              Lucky Color :
+              <span className="text-white font-light ml-1">
                 {horoscopeData.color}
               </span>
             </span>
           </li>
           <li className="flex justify-between my-2 text-indigo-300">
             <span>
-              Date_Range :{" "}
+              Date_Range :
               <span className="text-white font-light">
                 {horoscopeData.date_range}
               </span>
@@ -36,25 +36,24 @@ export default function DisplayData() {
           </li>
           <li className="flex justify-between my-2 text-yellow-300">
             <span>
-              Lucky Number :{" "}
-              <span className="text-white font-light">
+              Lucky Number :
+              <span className="text-white font-light ml-1">
                 {horoscopeData.lucky_number}
               </span>
             </span>
-            {}
           </li>
           <li className="flex justify-between my-2 text-purple-300">
             <span>
-              Lucky Time :{" "}
-              <span className="text-white font-light">
-                {horoscopeData.lucky_time.split(".").join(" ")}
+              Lucky Time :
+              <span className="text-white font-light ml-1">
+                {horoscopeData.lucky_time?.split(".").join(" ")}
               </span>
             </span>
           </li>
           <li className="text-green-100 flex justify-between my-2">
             <span>
-              Mood:{" "}
-              <span className="text-white font-light">
+              Mood:
+              <span className="text-white font-light ml-1">
                 {horoscopeData.mood}
               </span>
             </span>

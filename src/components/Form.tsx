@@ -8,11 +8,11 @@ export default function Form() {
   const { getFormData } = useGlobalContext()!;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
     const formData = {
       name: (e.currentTarget[0] as HTMLInputElement).value,
       sign: (e.currentTarget[1] as HTMLInputElement).value,
     };
+    e.preventDefault();
     localStorage.setItem("formData", JSON.stringify(formData));
     getFormData(formData);
     navigate("/details");

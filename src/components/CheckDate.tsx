@@ -4,7 +4,7 @@ import useGlobalContext from "../Context/context";
 export default function CheckDate() {
   const { horoscopeData, setIsFalls } = useGlobalContext()!;
   const [date, setDate] = useState(new Date(horoscopeData.current_date));
-  const dateRange = horoscopeData.date_range;
+  const dateRange = horoscopeData?.date_range;
   const [startStr, endStr] = dateRange?.split(" - ");
   const startMonth = new Date(startStr).getMonth();
   const endMonth = new Date(endStr).getMonth();

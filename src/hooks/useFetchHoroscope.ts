@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import type {HoroscopeDataValues, FormDataValues} from "../interfaces/interface"
-
-
+import AxiosOptions from "../constants/axiosOptions";
+import type {
+  HoroscopeDataValues,
+  FormDataValues,
+} from "../interfaces/interface";
 
 export default function useFetchHoroscope() {
-  const [horoscopeData, setHoroscopeData] = useState(
-    JSON.parse(localStorage.getItem("apiData")!) || <HoroscopeDataValues>{}
-  );
-  const [formData, setFormData] = useState(
+  const [horoscopeData, setHoroscopeData] = useState<HoroscopeDataValues>(
+    JSON.parse(localStorage.getItem("apiData")!) || {});
+  const [formData, setFormData] = useState<FormDataValues>(
     JSON.parse(localStorage.getItem("formData")!) || {}
   );
   const [loading, setLoading] = useState(false);
@@ -17,24 +18,11 @@ export default function useFetchHoroscope() {
   function getFormData(data: FormDataValues) {
     setFormData(data);
   }
-  function fetchData() {
-    const API_Key = import.meta.env.VITE_API_KEY;
-    setLoading(true);
-    const options = {
-      method: "POST",
-      url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/",
-      params: {
-        sign: formData?.sign.split(" ")[0],
-        day: formData.date,
-      },
-      headers: {
-        "X-RapidAPI-Key": API_Key,
-        "X-RapidAPI-Host": "sameer-kumar-aztro-v1.p.rapidapi.com",
-      },
-    };
 
+  function fetchData() {
+    setLoading(true);
     axios
-      .request(options)
+      .request(AxiosOptions(formData))
       .then(function (response) {
         localStorage.setItem("apiData", JSON.stringify(response.data));
         setHoroscopeData(response.data);
